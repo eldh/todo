@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "description": "Todo app",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eldh/todo.git"
+  },
   "scripts": {
-    "api": "NODE_PATH=$NODE_PATH:./shared node --harmony .",
-    "dev": "webpack-dev-server --progress --color",
-    "start": "npm run api && npm run dev"
+    "api": "echo 'Starting api server at port 5000\n\n' && cd api && ./api.py",
+    "dev": "echo 'Starting dev server at port 8080\n\n' && webpack-dev-server --progress --color"
   },
   "author": "Andreas Eldh <andreas.eldh@gmail.com>",
   "license": "MIT",
