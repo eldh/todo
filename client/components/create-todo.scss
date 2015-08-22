@@ -1,0 +1,12 @@
+@import '../styles/vars';
+.create-todo {
+	flex-direction: row;
+	background-color: $bg-color;
+	border-radius: $big-radius;
+	padding: $base-unit;
+}
+
+.create-todo__input {
+	flex-grow: 1;
+	margin-right: $base-unit;
+}

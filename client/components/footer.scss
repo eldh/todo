@@ -1,0 +1,7 @@
+@import '../styles/vars';
+.footer {
+	flex-direction: row;
+	justify-content: space-between;
+	padding: $base-unit;
+	font-size: $tiny-size;
+}

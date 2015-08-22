@@ -1,0 +1,50 @@
+$body-bg-color: #F6F5F5;
+$bg-color: #fff;
+
+$border-color: #E4E4E4;
+$zebra-color: #F4F7FA;
+$link-color: #488DC9;
+
+$font: 'Open Sans';
+$font-color: #333;
+$base-font-size: 18px;
+$base-line-height: 20px;
+
+$h1-size: 30px;
+$small-size: 13px;
+$tiny-size: 12px;
+
+$normal: 400;
+$bold: 700;
+
+$line-height-ratio: $base-line-height / $base-font-size;
+
+$base-unit: 20px;
+$half-unit: 10px;
+$radius: 4px;
+$big-radius: 6px;
+
+$content-width: 500px;
+
+$button-top-color: lighten(#2E8BB5, 5%);
+$button-bottom-color: darken(#2E8BB5, 5%);
+$button-font-color: #fff;
+$button-border-color: #336280;
+$button-disabled-top-color: #EBEAE9;
+$button-disabled-bottom-color: #DAD9D8;
+$button-disabled-border-color: #B7B6B6;
+$button-disabled-font-color: #6A6969;
+
+$input-border-color: #B7B6B6;
+
+$quiet-color: #A9A9A9;
+$icon-quiet-color: #BFBBBB;
+
+$checkbox-color: #2D8BB5;
+$checkbox-check-color: #0F4263;
+$checkbox-shadow-color: #CCCCCC;
+
+$icon-size: 13px;
+$border-width: 1px;
+
+$transition: all 0.2s ease;

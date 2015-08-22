@@ -1,0 +1,9 @@
+@import '../styles/vars';
+.layout {
+	background-color: $bg-color;
+	border: $border-width $border-color solid;
+	border-radius: $big-radius;
+	width: $content-width;
+	max-width: 100vw;
+	margin: $base-unit * 5 0;
+}

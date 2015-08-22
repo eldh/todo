@@ -1,0 +1,8 @@
+@import '../styles/vars';
+.todo-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-size: $small-size;
+	line-height: $base-unit * 2;
+}

@@ -1,0 +1,38 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+.todo {
+	flex-direction: row;
+	padding: 0 $base-unit;
+	font-size: $small-size;
+	line-height: $base-unit * 2;
+	transition: $transition;
+	background-color: $bg-color;
+	align-items: center;
+	&:nth-child(2n-1) {
+		background-color: $zebra-color;
+	}
+}
+.todo--completed {
+	color: $quiet-color;
+	text-decoration: line-through;
+}
+
+.todo__checkbox {
+	flex-grow: 1;
+}
+.todo--dragging {
+	opacity: 0;
+	@include layer;
+}
+.todo__icon {
+	margin-top: 1px; //Adjustment for icon size
+	margin-left: $base-unit;
+	opacity: 0;
+	transition: $transition;
+	path {
+		fill: $icon-quiet-color;
+	}
+	.todo--hover & {
+		opacity: 1;
+	}
+}

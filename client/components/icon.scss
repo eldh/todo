@@ -1,0 +1,15 @@
+@import '../styles/vars';
+.icon {
+  height: $icon-size;
+  width: $icon-size;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  g, svg, path, rect, polygon {
+    fill: $font-color;
+  }
+  > svg {
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
