@@ -1,7 +1,7 @@
 import request from 'superagent-bluebird-promise'
 import { createAction } from 'redux-actions'
 
-import { get, create, update, order, remove, completeAll, deleteAll } from '../lib/api'
+import { get, create, update, order, remove, deleteAll, updateAll } from '../lib/api'
 
 export const fetchTodos = createAction('GET_TODOS', get())
 
@@ -11,7 +11,7 @@ export const updateTodo = createAction('UPDATE_TODO', update())
 
 export const updateOrder = createAction('UPDATE_ORDER', order())
 
-export const markAllCompleted = createAction('COMPLETE_ALL', completeAll())
+export const updateAllTodos = createAction('UPDATE_ALL', updateAll())
 
 export const deleteTodo = createAction('DELETE_TODO', remove())
 

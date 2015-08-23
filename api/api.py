@@ -1,30 +1,7 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, request, make_response
 
-# Just for testing
 todos = []
-# todos = [
-# 	{
-# 		'id': 1,
-# 		'title': 'Create api',
-# 		'completed': False
-# 	},
-# 	{
-# 		'id': 2,
-# 		'title': 'Get redux going',
-# 		'completed': False
-# 	},
-# 	{
-# 		'id': 3,
-# 		'title': 'Sass things up',
-# 		'completed': False
-# 	},
-# 	{
-# 		'id': 4,
-# 		'title': 'DnD',
-# 		'completed': False
-# 	}
-# ]
 
 def getTodos():
 	global todos
@@ -47,6 +24,12 @@ def getMaxId():
 			maxId = todo['id']
 	return maxId
 
+def updateTodo(todo, newData):
+	for prop in newData:
+		if prop in newData:
+			todo[prop] = newData[prop]
+	return todo
+
 def updateAndJsonifyTodo(todo):
 	if len(todo) == 0:
 		abort(404)
@@ -56,9 +39,8 @@ def updateAndJsonifyTodo(todo):
 		abort(400)
 	if 'completed' in request.json and type(request.json['completed']) is not bool:
 		abort(400)
-	todo['title'] = request.json.get('title', todo['title'])
-	todo['completed'] = request.json.get('completed', todo['completed'])
-	return jsonify(todo)
+
+	return jsonify(updateTodo(todo, request.get_json()))
 
 
 
@@ -106,15 +88,16 @@ def delete(id):
 	setTodos(getTodos().remove(todo))
 	return jsonify({'result': True})
 
-@app.route('/api/todos/completeAll', methods=['PUT'])
-def completeAll():
-	def completeTodo(todo):
-		todo['completed'] = True
-		return todo
+@app.route('/api/todos/updateAll', methods=['PUT'])
+def updateAll():
 
-	completed = map(completeTodo, getTodos())
-	setTodos(completed)
-	return jsonify({'todos': completed})
+	updateData = request.get_json()
+	def performUpdate(todo):
+		return updateTodo(todo, updateData)
+
+	updated = map(performUpdate, getTodos())
+	setTodos(updated)
+	return jsonify({'todos': updated})
 
 @app.route('/api/todos/deleteAll', methods=['DELETE'])
 def deleteAll():

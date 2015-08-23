@@ -40,7 +40,7 @@ export default handleActions({
 		return state.set(payload.id, payload)
 	},
 
-	COMPLETE_ALL: (state, action) => {
+	UPDATE_ALL: (state, action) => {
 		const { payload } = action
 		return {
 			...state,

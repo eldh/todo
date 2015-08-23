@@ -23,8 +23,8 @@ export const remove = (type = ENTITY) => async (payload) => {
 	return _del(url)
 }
 
-export const completeAll = (type = ENTITY) => async (payload) => {
-	const url = `${BASE_URL}/${type}/completeAll`
+export const updateAll = (type = ENTITY) => async (payload) => {
+	const url = `${BASE_URL}/${type}/updateAll`
 	return _put(url, payload)
 }
 

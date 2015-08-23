@@ -59,7 +59,7 @@ export default class Footer extends React.Component {
 
 	_markAllCompleted() {
 		const { dispatch } = this.props
-		dispatch(actions.markAllCompleted())
+		dispatch(actions.updateAllTodos({completed: true}))
 	}
 	_clearCompleted() {
 		const { dispatch } = this.props
