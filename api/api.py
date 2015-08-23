@@ -64,7 +64,6 @@ def getAll():
 
 @app.route('/api/todos', methods=['POST'])
 def create():
-	print request
 	if not request.json or not 'title' in request.json:
 		abort(400)
 	todo = {
