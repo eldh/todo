@@ -55,6 +55,7 @@ export default class Todo extends Component {
 		const classes = classnames({
 			todo: true,
 			'todo--completed': todo.completed,
+			'todo--updating': todo.updating,
 			// Add hover state to get around browser bugs with dnd & :hover.
 			'todo--hover': this.state.hovering,
 			'todo--dragging': isDragging,

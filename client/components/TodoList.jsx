@@ -53,8 +53,7 @@ export default class TodoList extends React.Component {
 						moveProgress={this.moveProgress}
 						moveDone={this.moveDone}
 					/>
-				})
-			}
+				})}
 			</ul>
 		)
 	}

@@ -4,6 +4,15 @@ import { merge, append, findIndex, clone, map } from 'ramda'
 const initialState = {
 	todos: []
 }
+
+function updateTodo(state, payload) {
+	const newState = clone(state)
+	const index = findIndex((todo) => todo.id === payload.id
+		, newState.todos)
+	newState.todos[index] = payload
+	return newState
+}
+
 export default handleActions({
 
 	ADD_TODO: (state, action) => {
@@ -26,34 +35,45 @@ export default handleActions({
 		return state.delete(payload.id)
 	},
 
-	UPDATE_TODO: (state, action) => {
-		const { payload } = action
-		const newState = clone(state)
-		const index = findIndex((todo) => todo.id === payload.id
-			, newState.todos)
-		newState.todos[index] = payload
-		return newState
-	},
-
-	COMPLETE_TODO: (state, action) => {
-		const { payload } = action
-		return state.set(payload.id, payload)
-	},
-
-	UPDATE_ALL: (state, action) => {
-		const { payload } = action
-		return {
-			...state,
-			todos: payload.todos,
+	UPDATE_TODO: {
+		start(state, action) {
+			return updateTodo(state, {...action.meta, updating: true})
+		},
+		next(state, action) {
+			return updateTodo(state, action.payload)
 		}
 	},
 
-	DELETE_ALL: (state, action) => {
-		const { payload } = action
-		return {
-			...state,
-			todos: payload.todos,
+	UPDATE_ALL: {
+		start(state, action) {
+			return {
+				...state,
+				todos: map((todo) => merge(todo, action.meta), state.todos),
+			}
+		},
+		next(state, action) {
+			const { payload } = action
+			return {
+				...state,
+				todos: payload.todos,
+			}
 		}
+	},
+
+	DELETE_ALL: {
+		start(state, action) {
+			return {
+				...state,
+				todos: [],
+			}
+		},
+		next(state, action) {
+			const { payload } = action
+			return {
+				...state,
+				todos: payload.todos,
+			}
+		},
 	},
 
 	MOVE_TODO: (state, action) => {

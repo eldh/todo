@@ -16,6 +16,9 @@
 	color: $quiet-color;
 	text-decoration: line-through;
 }
+.todo--updating {
+	opacity: 0.9;
+}
 
 .todo__checkbox {
 	flex-grow: 1;
