@@ -3,3 +3,4 @@
 ### Installation
 Make sure you have installed pip and virtualenv, then run the `install.sh` script.
 
+(Python 2.X is required)
