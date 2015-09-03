@@ -1,19 +1,4 @@
 @import '../styles/vars';
 .dash-border--top {
-	border-top: 2px #F6F6F6 solid;
-	&:before,
-	&:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		width: 100%;
-	}
-	&:before {
-		border-top: 1px #fff dashed;
-		top: -1px;
-	}
-	&:after {
-		top: -2px;
-		border-top: 1px #D2D0D0 dashed;
-	}
+	border-top: 1px #F6F6F6 solid;
 }

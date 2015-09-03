@@ -2,7 +2,6 @@
 input[type=text] {
 	border-radius: $radius;
 	border: 1px $input-border-color solid;
-	box-shadow: 0 2px 1px 0 rgba(#000, 0.05) inset;
 	outline: none;
 	padding: 0 $half-unit;
 	font-family: inherit;
@@ -10,6 +9,6 @@ input[type=text] {
 	font-size: $small-size;
 	transition: $transition;
 	&:focus {
-		box-shadow: 0 2px 1px 0 rgba(#000, 0.1) inset;
+		border: 1px $button-border-color solid;
 	}
 }

@@ -1,8 +1,8 @@
 button {
 	appearance: none;
 	-webkit-appearance: none;
-	background: linear-gradient(to bottom, $button-top-color 0%,$button-top-color 50%,$button-bottom-color 51%,$button-bottom-color 100%);
 	border: $border-width $button-border-color solid;
+	background-color: $button-color;
 	border-radius: $radius;
 	outline: none;
 	height: $base-unit * 2;
@@ -10,28 +10,16 @@ button {
 	padding-left: $base-unit * 2;
 	padding-right: $base-unit * 2;
 	color: $button-font-color;
-	text-shadow: 0 -1px 0 rgba(#000, 0.5);
 	font-size: $small-size;
 	line-height: $base-unit * 2 - 2 * $border-width;
-	box-shadow: 0 1px 0 rgba(#fff, 0.4) inset,
-		0 -1px 0 rgba(#000, 0.05) inset;
 	&:focus {
 	}
 	&:active {
-	box-shadow: 0 -1px 1px rgba(#000, 0) inset,
-		0 2px 1px rgba(#000, 0.1) inset;
 	}
 	&:disabled {
 		color: $button-disabled-font-color;
+		background-color: $button-disabled-color;
 		border-color: $button-disabled-border-color;
-		text-shadow: 0 -1px 0 rgba(#fff, 0.5);
-
-		background: linear-gradient(to bottom,
-			$button-disabled-top-color 0%,
-			$button-disabled-top-color 50%,
-			$button-disabled-bottom-color 51%,
-			$button-disabled-bottom-color 100%
-		);
 	}
 }
 

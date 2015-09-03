@@ -27,15 +27,3 @@
 	opacity: 0;
 	@include layer;
 }
-.todo__icon {
-	margin-top: 1px; //Adjustment for icon size
-	margin-left: $base-unit;
-	opacity: 0;
-	transition: $transition;
-	path {
-		fill: $icon-quiet-color;
-	}
-	.todo--hover & {
-		opacity: 1;
-	}
-}

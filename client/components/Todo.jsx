@@ -74,7 +74,6 @@ export default class Todo extends Component {
 					onChange={ this._toggleCompleted.bind(this)}
 					className='todo__checkbox'
 				/>
-				<Icon name='move' className='todo__icon' />
 			</li>
 		))
 	}

@@ -5,6 +5,7 @@ html{
 }
 
 body, button, input {
+	font-family: $font;
 	color: $font-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;

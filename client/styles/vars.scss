@@ -1,9 +1,9 @@
-$body-bg-color: #F6F5F5;
+$body-bg-color: #f9f9f9;
 $bg-color: #fff;
 
 $border-color: #E4E4E4;
-$zebra-color: #F4F7FA;
-$link-color: #488DC9;
+$zebra-color: lighten(#000, 98%);
+$link-color: darken(#29BF96, 10%);
 
 $font: 'Open Sans';
 $font-color: #333;
@@ -21,28 +21,25 @@ $line-height-ratio: $base-line-height / $base-font-size;
 
 $base-unit: 20px;
 $half-unit: 10px;
-$radius: 4px;
-$big-radius: 6px;
+$radius: 6px;
+$big-radius: 12px;
 
 $content-width: 500px;
 
-$button-top-color: lighten(#2E8BB5, 5%);
-$button-bottom-color: darken(#2E8BB5, 5%);
+$button-color: lighten(#29BF96, 5%);
 $button-font-color: #fff;
-$button-border-color: #336280;
-$button-disabled-top-color: #EBEAE9;
-$button-disabled-bottom-color: #DAD9D8;
-$button-disabled-border-color: #B7B6B6;
-$button-disabled-font-color: #6A6969;
+$button-border-color: #29BF96;
+$button-disabled-color: #f9f9f9;
+$button-disabled-border-color: #ddd;
+$button-disabled-font-color: #aaa;
 
-$input-border-color: #B7B6B6;
+$input-border-color: #ccc;
 
 $quiet-color: #A9A9A9;
 $icon-quiet-color: #BFBBBB;
 
-$checkbox-color: #2D8BB5;
-$checkbox-check-color: #0F4263;
-$checkbox-shadow-color: #CCCCCC;
+$checkbox-color: transparent;
+$checkbox-check-color: #29BF96;
 
 $icon-size: 13px;
 $border-width: 1px;
