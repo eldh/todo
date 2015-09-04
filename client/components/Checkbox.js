@@ -27,7 +27,7 @@ export default class Checkbox extends React.Component {
 				<div className='checkbox__indicator'>
 					<Icon name='check' className='checkbox__indicator-icon' />
 				</div>
-				<span className='checkbox__label'>{label}</span>
+				<div className='checkbox__label'>{label}</div>
 			</label>
 		)
 	}

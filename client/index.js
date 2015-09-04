@@ -11,7 +11,7 @@ import App from './components/App'
 
 import * as reducers from './reducers'
 
-require('babel/polyfill')
+// require('babel/polyfill')
 
 const reducer = combineReducers(reducers)
 

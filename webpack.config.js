@@ -4,8 +4,7 @@ const autoprefixer = require('autoprefixer')
 
 module.exports = {
 	entry:  [
-		'webpack-dev-server/client?http://localhost:8080/',
-		'webpack/hot/only-dev-server',
+		'webpack-hot-middleware/client',
 		'./client'
 	],
 	output: {
@@ -21,16 +20,16 @@ module.exports = {
 	module: {
 		preLoaders: [
 			{
-				test: /\.jsx?$/,
+				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'eslint',
 			}
 		],
 		loaders: [
 			{
-				test: /\.jsx?$/,
+				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'react-hot!babel'
+				loader: 'babel?optional[]=runtime&stage=0'
 			},
 			{ test: /\.json$/, loader: 'json' },
 			{ test: /\.svg$/, loader: 'raw!svgo' },
