@@ -26,7 +26,6 @@ export default class Layout extends React.Component {
 		const { dispatch } = this.props
 		return (
 			<main id='app-view' className='layout'>
-				<header className='header'><h1>Todos</h1></header>
 				{<CreateTodo dispatch={dispatch} />}
 				{<TodoList todos={todos} dispatch={dispatch} />}
 				{<Footer todos={todos} dispatch={dispatch} />}

@@ -50,7 +50,11 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env': {
 				DEV: JSON.stringify(true)
-			}
+			},
+			__CLIENT__: true,
+			__SERVER__: false,
+			__DEVELOPMENT__: true,
+			__DEVTOOLS__: false,  // <-------- DISABLE redux-devtools HERE
 		})
 	],
 	devtool: 'eval',
