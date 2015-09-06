@@ -50,6 +50,7 @@ export default class TodoList extends React.Component {
 						key={todo.id}
 						todo={todo}
 						update={(todo) => dispatch(actions.updateTodo(todo))}
+						del={(todo) => dispatch(actions.deleteTodo(todo))}
 						moveProgress={this.moveProgress}
 						moveDone={this.moveDone}
 					/>

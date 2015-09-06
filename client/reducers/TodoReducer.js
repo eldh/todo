@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { merge, append, findIndex, clone, map } from 'ramda'
+import { merge, append, findIndex, clone, map, remove } from 'ramda'
 
 const initialState = {
 	todos: []
@@ -32,7 +32,8 @@ export default handleActions({
 
 	DELETE_TODO: (state, action) => {
 		const { payload } = action
-		return state.delete(payload.id)
+		const index = findIndex((todo) => todo.id === payload.deleted, state.todos)
+		return {...state, todos: remove(index, 1, state.todos)}
 	},
 
 	UPDATE_TODO: {

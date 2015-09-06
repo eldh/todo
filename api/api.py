@@ -84,8 +84,10 @@ def update(id):
 @app.route('/api/todos/<int:id>', methods=['DELETE'])
 def delete(id):
 	todo = getTodoWithId(id)
-	setTodos(getTodos().remove(todo))
-	return jsonify({'result': True})
+	newList = getTodos()
+	newList.remove(todo)
+	setTodos(newList)
+	return jsonify({'deleted': id})
 
 @app.route('/api/todos/updateAll', methods=['PUT'])
 def updateAll():

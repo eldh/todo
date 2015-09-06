@@ -14,7 +14,9 @@
 }
 .todo--completed {
 	color: $quiet-color;
-	text-decoration: line-through;
+	.todo__checkbox {
+		text-decoration: line-through;
+	}
 }
 .todo--updating {
 	opacity: 0.9;
@@ -22,6 +24,15 @@
 
 .todo__checkbox {
 	flex-grow: 1;
+}
+.todo__delete {
+	font-weight: 900;
+	opacity: 0.2;
+	transition: $transition;
+	padding: 0 $half-unit / 2;
+	&:hover {
+		opacity: 1;
+	}
 }
 .todo--dragging {
 	opacity: 0;

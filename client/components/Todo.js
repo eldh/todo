@@ -74,6 +74,7 @@ export default class Todo extends Component {
 					onChange={ this._toggleCompleted.bind(this)}
 					className='todo__checkbox'
 				/>
+				<div className='todo__delete' onClick={this._del.bind(this)}>×</div>
 			</li>
 		))
 	}
@@ -89,5 +90,10 @@ export default class Todo extends Component {
 	_toggleCompleted() {
 		const { update, todo } = this.props
 		update({...todo, completed: !todo.completed})
+	}
+
+	_del() {
+		const { del, todo } = this.props
+		del(todo)
 	}
 }

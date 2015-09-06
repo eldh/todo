@@ -19,8 +19,9 @@ export const update = (type = ENTITY) => async (payload) => {
 }
 
 export const remove = (type = ENTITY) => async (payload) => {
+	console.log('remove', payload)
 	const url = `${BASE_URL}/${type}/${payload.id}`
-	return _del(url)
+	return _delete(url)
 }
 
 export const updateAll = (type = ENTITY) => async (payload) => {
@@ -61,7 +62,7 @@ const _put = async (url, payload) => {
 	return result.body
 }
 
-const _delete = async (url) => {
+const _delete = async (url, payload) => {
 	const result = await request
 		.del(url)
 		.promise()

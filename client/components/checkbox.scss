@@ -29,11 +29,11 @@
 	background-repeat: no-repeat;
 	user-select: none;
 	border-radius: 50%;
-	border: 1px $button-disabled-border-color solid;
+	border: 1px $checkbox-disabled-border-color solid;
 	transition: $transition;
 	.checkbox__input:checked ~ & {
 		background-color: $checkbox-color;
-		border-color: $button-border-color;
+		border-color: $checkbox-border-color;
 	}
 	.checkbox__input:focus:checked ~ &,
 	.checkbox__input:active:checked ~ & {

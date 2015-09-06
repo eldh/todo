@@ -9,7 +9,7 @@
   },
   "scripts": {
     "api": "echo 'Starting api server at port 5000\n\n' && cd api && ./api.py",
-    "dev": "echo 'Starting dev server at port 8080\n\n' && webpack-dev-server --progress --color"
+    "dev": "echo 'Starting dev server at port 3000\n\n' && node server.js"
   },
   "author": "Andreas Eldh <andreas.eldh@gmail.com>",
   "license": "MIT",
