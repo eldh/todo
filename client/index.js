@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import { batchedUpdatesMiddleware } from 'redux-batched-updates'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise'
+import invariant from 'redux-immutable-state-invariant'
+import logger from 'redux-logger'
 import './styles/style.scss'
 import { devTools, persistState } from 'redux-devtools'
 import App from './components/App'
@@ -13,7 +15,7 @@ import * as reducers from './reducers'
 
 const reducer = combineReducers(reducers)
 
-const middleware = [thunk, promise, batchedUpdatesMiddleware]
+const middleware = [thunk, promise, batchedUpdatesMiddleware, logger, invariant()]
 
 let storeCreator
 if (__DEVELOPMENT__ && __CLIENT__ && __DEVTOOLS__) {
